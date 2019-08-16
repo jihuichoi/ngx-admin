@@ -18,11 +18,11 @@ const routes: Routes = [{
     //   path: 'iot-dashboard',
     //   component: DashboardComponent,
     // },
-    // {
-    //   path: 'layout',
-    //   loadChildren: () => import('./layout/layout.module')
-    //     .then(m => m.LayoutModule),
-    // },
+    {
+      path: 'layout',
+      loadChildren: () => import('./layout/layout.module')
+        .then(m => m.LayoutModule),
+    },
     // {
     //   path: 'forms',
     //   loadChildren: () => import('./forms/forms.module')

@@ -13,10 +13,10 @@ const routes: Routes = [{
       path: 'smart-table',
       component: SmartTableComponent,
     },
-    {
-      path: 'tree-grid',
-      component: TreeGridComponent,
-    },
+    // {
+    //   path: 'tree-grid',
+    //   component: TreeGridComponent,
+    // },
   ],
 }];
 

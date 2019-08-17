@@ -3,6 +3,10 @@ import { Component } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 
 import { SmartTableData } from '../../@core/data/smart-table';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { NbWindowService } from '@nebular/theme';
+import { WindowFormComponent } from '../../pages/modal-overlays/window/window-form/window-form.component';
+
 
 @Component({
   selector: 'ngx-my-table',
@@ -11,6 +15,8 @@ import { SmartTableData } from '../../@core/data/smart-table';
 })
 // export class MyTableComponent implements OnInit {
 export class MyTableComponent {
+
+  smartTable: Ng2SmartTableModule;
 
   settings = {
     mode: 'external',
@@ -64,7 +70,7 @@ export class MyTableComponent {
 
   source: LocalDataSource = new LocalDataSource();
 
-  constructor(private service: SmartTableData) {
+  constructor(private service: SmartTableData, private windowService: NbWindowService) {
     const data = this.service.getData();
     this.source.load(data);
   }
@@ -72,17 +78,11 @@ export class MyTableComponent {
   e;
   openWindowForm1(event) {
     this.e = event;
-    // console.log('form#1: ', this.e);
+    this.windowService.open(WindowFormComponent, { title: '나이: ' + this.e.data.age });
   }
 
   openWindowForm2(event) {
     this.e = event;
-    // console.log('form#2: ', this.e);
+    this.windowService.open(WindowFormComponent, { title: '이름: ' + this.e.data.firstName });
   }
-
-  // constructor() { }
-
-  // ngOnInit() {
-  // }
-
 }

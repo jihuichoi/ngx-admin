@@ -13,44 +13,52 @@ import { SmartTableData } from '../../@core/data/smart-table';
 export class MyTableComponent {
 
   settings = {
-    add: {
-      addButtonContent: '<i class="nb-plus"></i>',
-      createButtonContent: '<i class="nb-checkmark"></i>',
-      cancelButtonContent: '<i class="nb-close"></i>',
-    },
-    edit: {
-      editButtonContent: '<i class="nb-edit"></i>',
-      saveButtonContent: '<i class="nb-checkmark"></i>',
-      cancelButtonContent: '<i class="nb-close"></i>',
-    },
-    delete: {
-      deleteButtonContent: '<i class="nb-trash"></i>',
-      confirmDelete: true,
-    },
+    actions: false,
+    // add: {
+    //   addButtonContent: '<i class="nb-plus"></i>',
+    //   createButtonContent: '<i class="nb-checkmark"></i>',
+    //   cancelButtonContent: '<i class="nb-close"></i>',
+    // },
+    // edit: {
+    //   editButtonContent: '<i class="nb-edit"></i>',
+    //   saveButtonContent: '<i class="nb-checkmark"></i>',
+    //   cancelButtonContent: '<i class="nb-close"></i>',
+    // },
+    // delete: {
+    //   deleteButtonContent: '<i class="nb-trash"></i>',
+    //   confirmDelete: true,
+    // },
+    hideSubHeader: true,
     columns: {
       id: {
         title: 'ID',
         type: 'number',
+        sort: false,
+        width: '5%',
       },
       firstName: {
-        title: 'First Name',
+        title: '이름',
         type: 'string',
       },
       lastName: {
-        title: 'Last Name',
+        title: '성',
         type: 'string',
       },
-      username: {
-        title: 'Username',
-        type: 'string',
-      },
+      // username: {
+      //   title: '계정',
+      //   type: 'string',
+      // },
       email: {
-        title: 'E-mail',
+        title: '이메일',
         type: 'string',
       },
-      age: {
-        title: 'Age',
-        type: 'number',
+      // age: {
+      //   title: '나이',
+      //   type: 'number',
+      // },
+      address: {
+        title: '주소',
+        type: 'string',
       },
     },
   };

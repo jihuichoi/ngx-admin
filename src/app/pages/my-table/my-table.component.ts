@@ -13,21 +13,20 @@ import { SmartTableData } from '../../@core/data/smart-table';
 export class MyTableComponent {
 
   settings = {
-    actions: false,
-    // add: {
-    //   addButtonContent: '<i class="nb-plus"></i>',
-    //   createButtonContent: '<i class="nb-checkmark"></i>',
-    //   cancelButtonContent: '<i class="nb-close"></i>',
-    // },
-    // edit: {
-    //   editButtonContent: '<i class="nb-edit"></i>',
-    //   saveButtonContent: '<i class="nb-checkmark"></i>',
-    //   cancelButtonContent: '<i class="nb-close"></i>',
-    // },
-    // delete: {
-    //   deleteButtonContent: '<i class="nb-trash"></i>',
-    //   confirmDelete: true,
-    // },
+    mode: 'external',
+    edit: {
+      editButtonContent: '<i class="nb-search"></i>',
+      saveButtonContent: '<i class="nb-checkmark"></i>',
+      cancelButtonContent: '<i class="nb-close"></i>',
+    },
+    delete: {
+      deleteButtonContent: '<i class="nb-edit"></i>',
+      confirmDelete: true,
+    },
+    actions: {
+      columnTitle: '',
+      position: 'right',
+    },
     hideSubHeader: true,
     columns: {
       id: {
@@ -70,12 +69,15 @@ export class MyTableComponent {
     this.source.load(data);
   }
 
-  onDeleteConfirm(event): void {
-    if (window.confirm('Are you sure you want to delete?')) {
-      event.confirm.resolve();
-    } else {
-      event.confirm.reject();
-    }
+  e;
+  openWindowForm1(event) {
+    this.e = event;
+    console.log("form#1: ", this.e);
+  }
+
+  openWindowForm2(event) {
+    this.e = event;
+    console.log("form#2: ", this.e);
   }
 
   // constructor() { }

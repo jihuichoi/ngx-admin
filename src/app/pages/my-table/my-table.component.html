@@ -4,7 +4,7 @@
 	</nb-card-header>
 
 	<nb-card-body>
-		<ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
+		<ng2-smart-table [settings]="settings" [source]="source" (edit)="openWindowForm1($event)" (delete)="openWindowForm2($event)">
 		</ng2-smart-table>
 	</nb-card-body>
 </nb-card>

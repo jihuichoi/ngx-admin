@@ -72,12 +72,12 @@ export class MyTableComponent {
   e;
   openWindowForm1(event) {
     this.e = event;
-    console.log("form#1: ", this.e);
+    // console.log('form#1: ', this.e);
   }
 
   openWindowForm2(event) {
     this.e = event;
-    console.log("form#2: ", this.e);
+    // console.log('form#2: ', this.e);
   }
 
   // constructor() { }
